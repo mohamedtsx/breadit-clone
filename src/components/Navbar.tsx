@@ -1,12 +1,16 @@
 import React from 'react'
+
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n'
 import { Icons } from './Icons'
 
 import { buttonVariants } from './ui/Button'
 
 
-import Link from 'next/link'
 
 const Navbar = () => {
+  const t = useTranslations();
+
   return (
     <div className='fixed top-0 inset-x-0 h-fit bg-zinc-100 border-b border-zinc-300 z-10'>
         <div className='container max-w-7xl flex justify-between gap-2 py-2'>
@@ -20,7 +24,7 @@ const Navbar = () => {
           {/* search bar */}
           
           <Link href='/login' className={buttonVariants()}>
-            Sign In
+            {t('Component.login')}
           </Link>
         </div>
     </div>
